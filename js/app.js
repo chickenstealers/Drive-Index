@@ -86,7 +86,7 @@ function nav(path) {
 	var html = "";
 	var cur = window.current_drive_order || 0;
 	html += `<nav class="navbar navbar-expand-lg ${UI.dark_mode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}">
-  <a class="navbar-brand" href="/${cur}:/">${UI.logo_image ? '<img border="0" alt="'+UI.company_name+'" src="'+UI.logo_link_name+'" height="30px">' : UI.logo_link_name}</a>
+  <a class="navbar-brand" href="/${cur}:/">${UI.logo_image ? '<img border="0" alt="' + UI.company_name + '" src="' + UI.logo_link_name + '" height="30px">' : UI.logo_link_name}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -273,11 +273,11 @@ function list(path) {
 
 						let $list = $('#list');
 						requestListPath(path, {
-								password: prevReqParams['password'],
-								page_token: $list.data('nextPageToken'),
-								// Request next page
-								page_index: $list.data('curPageIndex') + 1
-							},
+							password: prevReqParams['password'],
+							page_token: $list.data('nextPageToken'),
+							// Request next page
+							page_index: $list.data('curPageIndex') + 1
+						},
 							successResultCallback,
 							// The password is the same as before. No authError
 							null
@@ -296,8 +296,8 @@ function list(path) {
 
 	// Start requesting data from page 1
 	requestListPath(path, {
-			password: password
-		},
+		password: password
+	},
 		successResultCallback,
 		function (path) {
 			$('#spinner').remove();
@@ -343,13 +343,13 @@ function append_files_to_list(path, files) {
 			if (is_lastpage_loaded && item.name == "README.md") {
 				get_file(p, item, function (data) {
 					markdown("#readme_md", data);
-          $("img").addClass("img-fluid")
+					$("img").addClass("img-fluid")
 				});
 			}
 			if (item.name == "HEAD.md") {
 				get_file(p, item, function (data) {
 					markdown("#head_md", data);
-          $("img").addClass("img-fluid")
+					$("img").addClass("img-fluid")
 				});
 			}
 			var ext = p.split('.').pop().toLowerCase();
@@ -478,11 +478,11 @@ function render_search_result_list() {
 
 						let $list = $('#list');
 						requestSearch({
-								q: window.MODEL.q,
-								page_token: $list.data('nextPageToken'),
-								// Request next page
-								page_index: $list.data('curPageIndex') + 1
-							},
+							q: window.MODEL.q,
+							page_token: $list.data('nextPageToken'),
+							// Request next page
+							page_index: $list.data('curPageIndex') + 1
+						},
 							searchSuccessCallback
 						)
 					}
@@ -664,7 +664,7 @@ function file_code(path) {
 <div class="container"><br>
 <div class="card">
 <div class="card-body">
-  <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML=decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
+  <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML="Testing" + decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
 <code id="editor" class="card-text"></code>
 </div>
 <p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download</a></p><br>`;
