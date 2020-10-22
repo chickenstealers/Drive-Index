@@ -667,7 +667,7 @@ function file_code(path) {
   <div class="alert alert-danger" id="folderne" role="alert"></div><script>document.getElementById("folderne").innerHTML="Testing" + decodeURI(this.window.location.href.substring(window.location.href.lastIndexOf('/',window.location.href.lastIndexOf('/')+1))).replace('/','').replace('?a=view','');</script>
 <code id="editor" class="card-text"></code>
 </div>
-<p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download</a></p><br>`;
+<p class="card-text text-center"><a href="${href}" class="btn btn-primary">Download Cuks</a></p><br>`;
 	$('#content').html(content);
 
 	$.get(path, function (data) {
